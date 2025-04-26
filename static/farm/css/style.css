@@ -1,0 +1,42 @@
+h1 {
+  background-color: #fff;
+}
+
+/* Previous Styling */
+body {
+  background-color: #f7fcf8;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.login-card {
+  max-width: 420px;
+  margin: 5% auto;
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.login-card .logo {
+  font-size: 2rem;
+  color: #2e7d32;
+}
+
+.login-card .form-control:focus {
+  box-shadow: none;
+  border-color: #4caf50;
+}
+
+.login-card .form-label {
+  font-weight: 500;
+}
+
+.demo-credentials {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Ensure the input password icon works properly */
+.input-group-text {
+  cursor: pointer;
+}

@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Farm Flow</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+      crossorigin="anonymous"
+    />
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'farm/css/style.css' %}" />
+    <!-- Font Awesome 6 CDN -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    .icon-check {
+      width: 32px;
+      height: 32px;
+      background-color: #e6f4ea;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: #2e7d32;
+    }
+    a,
+    li:hover {
+      cursor: pointer;
+      {% comment %} text-decoration: underline; {% endcomment %}
+    }
+  </style>
+  <body>
+    {% load static %} {% comment %}
+    <h1>i will build this from scratch</h1>
+    {% endcomment %}
+    <nav class="navbar navbar-expand-lg navbar-light mt-2">
+      <div class="container">
+        <!-- Logo / Brand Name -->
+        <a class="navbar-brand fw-bold text-success" href="#">Farm Flow</a>
+
+        <!-- Toggler for mobile view -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarContent"
+          aria-controls="navbarContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar links -->
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarContent"
+        >
+          <ul class="navbar-nav me-3 mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#Features">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#Benefits">Benefits</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#Contact">Contact</a>
+            </li>
+          </ul>
+
+          <!-- Auth Buttons -->
+          <div class="d-flex">
+            <a class="btn btn-outline-primary me-2" href="{% url 'login' %}"
+              >Login</a
+            >
+
+            <a class="btn btn-success" href="{% url 'register' %}">Sign Up</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="container py-5">
+      <div class="row align-items-center">
+        <!-- Text Section -->
+        <div class="col-md-6 text-center text-md-start mb-4 mb-md-0">
+          {% comment %} i put the bg in below h1 {% endcomment %}
+          <h1 class="display-5 fw-bold bg-light">
+            Streamline Your Farm Management
+          </h1>
+          <h3 class="lead text-dark">
+            A comprehensive solution for modern farmers to manage crops,
+            livestock, finances, and more.
+          </h3>
+          <div class="mt-4">
+            <button class="btn btn-success me-2">Get Started</button>
+            <a class="btn btn-outline-primary" href="{% url 'login' %}"
+              >Demo Account</a
+            >
+          </div>
+          <p class="text-muted mt-3">
+            No credit card required. Start your 30-day free trial today.
+          </p>
+        </div>
+
+        <!-- Image Section -->
+        <div class="col-md-6 text-center">
+          <img
+            src="{% static 'farm/images/bi_1.avif' %}"
+            alt="Logo"
+            class="img-fluid rounded"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-5">
+      <h3 id="Features">Comprehensive Features</h3>
+      <p class="text-secondary">
+        Everything you need to manage your agricultural operations efficiently.
+      </p>
+    </div>
+    <div class="container py-5">
+      <div class="row g-4">
+        <!-- Card 1: Crop Management -->
+        <div class="col-md-4">
+          <div
+            class="card shadow-sm bg-white Class Color border-primary Blue border-secondary"
+            style="border: 1px solid"
+          >
+            <div class="card-body text-center">
+              <div class="mb-3">
+                <i class="fa-solid fa-seedling fa-2x text-success"></i>
+              </div>
+              <h5 class="card-title">Crop Management</h5>
+              <p class="card-text text-secondary">
+                Track planting, growing cycles, and harvests. Monitor crop
+                health and fertilization schedules.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Livestock Management -->
+        <div class="col-md-4">
+          <div
+            class="card shadow-sm bg-white Class Color border-primary Blue border-secondary"
+            style="border: 1px solid"
+          >
+            <div class="card-body text-center">
+              <div class="mb-3">
+                <i class="fa-solid fa-cow fa-2x text-success"></i>
+              </div>
+              <h5 class="card-title">Livestock Management</h5>
+              <p class="card-text text-secondary">
+                Monitor animal health, breeding cycles, feed consumption, and
+                productivity.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Financial Management -->
+        <div class="col-md-4">
+          <div
+            class="card shadow-sm bg-white Class Color border-primary Blue border-secondary"
+            style="border: 1px solid"
+          >
+            <div class="card-body text-center">
+              <div class="mb-3">
+                <i class="fa-solid fa-sack-dollar fa-2x text-success"></i>
+              </div>
+              <h5 class="card-title">Financial Management</h5>
+              <p class="card-text text-secondary">
+                Track expenses, income, and profitability. Generate financial
+                reports and forecasts.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: Worker Management -->
+        <div class="col-md-4">
+          <div
+            class="card shadow-sm bg-white Class Color border-primary Blue border-secondary"
+            style="border: 1px solid"
+          >
+            <div class="card-body text-center">
+              <div class="mb-3">
+                <i class="fa-solid fa-users-gear fa-2x text-success"></i>
+              </div>
+              <h5 class="card-title">Worker Management</h5>
+              <p class="card-text text-secondary">
+                Assign tasks, track hours, and manage payroll for farm workers.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5: Task Scheduling -->
+        <div class="col-md-4">
+          <div
+            class="card shadow-sm bg-white Class Color border-primary Blue border-secondary"
+            style="border: 1px solid"
+          >
+            <div class="card-body text-center">
+              <div class="mb-3">
+                <i class="fa-solid fa-calendar-check fa-2x text-success"></i>
+              </div>
+              <h5 class="card-title">Task Scheduling</h5>
+              <p class="card-text text-secondary">
+                Plan and schedule farm tasks. Set reminders for important
+                activities.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6: Weather Tracking -->
+        <div class="col-md-4">
+          <div
+            class="card shadow-sm bg-white Class Color border-primary Blue border-secondary"
+            style="border: 1px solid"
+          >
+            <div class="card-body text-center">
+              <div class="mb-3">
+                <i class="fa-solid fa-cloud-sun-rain fa-2x text-success"></i>
+              </div>
+              <h5 class="card-title">Weather Tracking</h5>
+              <p class="card-text text-secondary">
+                Get real-time weather updates and forecasts to plan farm
+                operations accordingly.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="container py-5">
+      <div class="text-center mb-4">
+        <h2 id="Benefits" class="fw-bold">Why Choose FarmFlow?</h2>
+        <p class="text-muted">
+          Our farm management system is designed to boost productivity and
+          profitability.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Left Column -->
+        <div class="col-md-6">
+          <div class="d-flex">
+            <div class="icon-check me-3">✓</div>
+            <div>
+              <h5 class="fw-bold">Increased Efficiency</h5>
+              <p class="text-muted mb-0">
+                Streamline operations and reduce manual record-keeping, saving
+                valuable time.
+              </p>
+            </div>
+          </div>
+          <div class="d-flex mt-4">
+            <div class="icon-check me-3">✓</div>
+            <div>
+              <h5 class="fw-bold">Data-Driven Decisions</h5>
+              <p class="text-muted mb-0">
+                Access comprehensive reports and analytics to make informed
+                farming decisions.
+              </p>
+            </div>
+          </div>
+          <div class="d-flex mt-4">
+            <div class="icon-check me-3">✓</div>
+            <div>
+              <h5 class="fw-bold">Cost Reduction</h5>
+              <p class="text-muted mb-0">
+                Identify areas of waste and optimize resource allocation for
+                better profitability.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column -->
+        <div class="col-md-6">
+          <div class="d-flex">
+            <div class="icon-check me-3">✓</div>
+            <div>
+              <h5 class="fw-bold">Improved Compliance</h5>
+              <p class="text-muted mb-0">
+                Keep track of regulations and certification requirements with
+                ease.
+              </p>
+            </div>
+          </div>
+          <div class="d-flex mt-4">
+            <div class="icon-check me-3">✓</div>
+            <div>
+              <h5 class="fw-bold">Enhanced Planning</h5>
+              <p class="text-muted mb-0">
+                Plan seasons ahead with forecasting tools and scheduling
+                features.
+              </p>
+            </div>
+          </div>
+          <div class="d-flex mt-4">
+            <div class="icon-check me-3">✓</div>
+            <div>
+              <h5 class="fw-bold">Mobile Access</h5>
+              <p class="text-muted mb-0">
+                Access your farm data anywhere, anytime from any device.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-5">
+        <a href="#" class="btn btn-success px-4 py-2 fw-semibold"
+          >Start Your Free Trial</a
+        >
+      </div>
+    </section>
+    <div class="text-center mx-auto" style="max-width: 600px">
+      <h3 id="Contact">Get in Touch</h3>
+      <p>
+        Have questions about our farm management system? We're here to help.
+      </p>
+    </div>
+    <div class="container my-5">
+      <div
+        class="bg-white p-4 rounded shadow-sm border"
+        style="max-width: 700px; margin: auto"
+      >
+        <form>
+          <div class="row mb-3">
+            <div class="col-md-6">
+              <label for="name" class="form-label fw-bold">Name</label>
+              <input
+                type="text"
+                class="form-control bg-light"
+                id="name"
+                placeholder="Your name"
+              />
+            </div>
+            <div class="col-md-6">
+              <label for="email" class="form-label fw-bold">Email</label>
+              <input
+                type="email"
+                class="form-control bg-light"
+                id="email"
+                placeholder="Your email"
+              />
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="subject" class="form-label fw-bold">Subject</label>
+            <input
+              type="text"
+              class="form-control bg-light"
+              id="subject"
+              placeholder="How can we help?"
+            />
+          </div>
+
+          <div class="mb-4">
+            <label for="message" class="form-label fw-bold">Message</label>
+            <textarea
+              class="form-control bg-light"
+              id="message"
+              rows="5"
+              placeholder="Your message here..."
+            ></textarea>
+          </div>
+
+          <div class="d-grid">
+            <button
+              type="submit"
+              class="btn btn-success btn-lg fw-semibold"
+              id="sendMessageBtn"
+            >
+              Send Message
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <footer class="bg-light border-top py-5">
+      <div class="container">
+        <div class="row gy-4">
+          <!-- Brand -->
+          <div class="col-md-3">
+            <h5 class="text-success fw-bold">
+              <i class="bi bi-flower2"></i> FarmFlow
+            </h5>
+            <p class="text-muted">
+              Comprehensive farm management solution for modern agriculture.
+            </p>
+          </div>
+
+          <!-- Features -->
+          <div class="col-md-3">
+            <h6 class="fw-bold">Features</h6>
+            <ul class="list-unstyled text-muted">
+              <li>Crop Management</li>
+              <li>Livestock Management</li>
+              <li>Financial Tracking</li>
+              <li>Task Scheduling</li>
+              <li>Weather Integration</li>
+            </ul>
+          </div>
+
+          <!-- Resources -->
+          <div class="col-md-3">
+            <h6 class="fw-bold">Resources</h6>
+            <ul class="list-unstyled text-muted">
+              <li>Documentation</li>
+              <li>Blog</li>
+              <li>Support Center</li>
+              <li>Pricing</li>
+              <li>FAQs</li>
+            </ul>
+          </div>
+
+          <!-- Legal -->
+          <div class="col-md-3">
+            <h6 class="fw-bold">Legal</h6>
+            <ul class="list-unstyled text-muted">
+              <li>Terms of Service</li>
+              <li>Privacy Policy</li>
+              <li>Cookie Policy</li>
+              <li>GDPR Compliance</li>
+              <li>Security</li>
+            </ul>
+          </div>
+        </div>
+
+        <hr class="my-4" />
+
+        <div
+          class="d-flex flex-column flex-md-row justify-content-between align-items-center text-muted"
+        >
+          <p class="mb-2 mb-md-0">© 2025 FarmFlow. All rights reserved.</p>
+          <div>
+            <a href="#" class="text-muted me-3"
+              ><i class="bi bi-facebook fs-5"></i
+            ></a>
+            <a href="#" class="text-muted me-3"
+              ><i class="bi bi-twitter fs-5"></i
+            ></a>
+            <a href="#" class="text-muted me-3"
+              ><i class="bi bi-instagram fs-5"></i
+            ></a>
+            <a href="#" class="text-muted"
+              ><i class="bi bi-linkedin fs-5"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+    crossorigin="anonymous"
+  ></script>
+  <script>
+    document
+      .getElementById("sendMessageBtn")
+      .addEventListener("click", function (event) {
+        event.preventDefault(); // Prevent form submission if inside a form
+        alert("Thank you for your message!");
+      });
+  </script>
+</html>

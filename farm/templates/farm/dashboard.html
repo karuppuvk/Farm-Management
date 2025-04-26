@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Farm Dashboard</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --green-dark: #4d7c0f;
+        --green-light: #86efac;
+        --brown-dark: #78350f;
+        --brown-light: #f9fafb;
+        --blue: #0369a1;
+      }
+
+      body {
+        background-color: var(--brown-light);
+        font-family: "Segoe UI", sans-serif;
+      }
+
+      .form-card {
+        background-color: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        padding: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .form-header {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 1.2rem;
+      }
+
+      .btn-green {
+        background-color: var(--green-dark);
+        color: white;
+      }
+
+      .btn-blue {
+        background-color: var(--blue);
+        color: white;
+      }
+
+      .btn-brown {
+        background-color: var(--brown-dark);
+        color: white;
+      }
+
+      .form-label {
+        font-weight: 500;
+      }
+
+      .container {
+        max-width: 700px;
+        margin-top: 3rem;
+      }
+
+      form p {
+        margin-bottom: 1rem;
+      }
+
+      form p label {
+        display: block;
+        margin-bottom: 0.4rem;
+        font-weight: 500;
+      }
+
+      form p input,
+      form p select,
+      form p textarea {
+        width: 100%;
+        padding: 0.5rem;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+      }
+
+      /* Ensure date input fields are styled consistently */
+      input[type="date"] {
+        appearance: none;
+        -webkit-appearance: none;
+        background-color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="text-center mb-5" style="color: var(--green-dark)">
+        🌿 Farm Management Dashboard
+      </h1>
+
+      <!-- Crop Form -->
+      <div class="form-card">
+        <div class="form-header" style="color: var(--green-dark)">🌾 Crop</div>
+        <form method="post">
+          {% csrf_token %}
+          {{ crop_form.as_p }}
+          <input type="submit" name="submit_crop" value="Save Crop" class="btn btn-green mt-2" />
+        </form>
+      </div>
+
+      <!-- Livestock Form -->
+      <div class="form-card">
+        <div class="form-header" style="color: var(--brown-dark)">🐄 Livestock</div>
+        <form method="post">
+          {% csrf_token %}
+          {{ livestock_form.as_p }}
+          <input type="submit" name="submit_livestock" value="Save Livestock" class="btn btn-brown mt-2" />
+        </form>
+      </div>
+
+      <!-- Financial Form -->
+      <div class="form-card">
+        <div class="form-header" style="color: var(--blue)">💰 Financial Record</div>
+        <form method="post">
+          {% csrf_token %}
+          {{ financial_form.as_p }}
+          <input type="submit" name="submit_financial" value="Save Financial Record" class="btn btn-blue mt-2" />
+        </form>
+      </div>
+
+      <!-- Worker Form -->
+      <div class="form-card">
+        <div class="form-header" style="color: var(--green-dark)">👷 Worker</div>
+        <form method="post">
+          {% csrf_token %}
+          {{ worker_form.as_p }}
+          <input type="submit" name="submit_worker" value="Save Worker" class="btn btn-green mt-2" />
+        </form>
+      </div>
+
+      <!-- Task Form -->
+      <div class="form-card">
+        <div class="form-header" style="color: var(--blue)">🗓️ Task</div>
+        <form method="post">
+          {% csrf_token %}
+          {{ task_form.as_p }}
+          <input type="submit" name="submit_task" value="Save Task" class="btn btn-blue mt-2" />
+        </form>
+      </div>
+
+      <!-- Weather Form -->
+      <div class="form-card">
+        <div class="form-header" style="color: var(--brown-dark)">☁️ Weather</div>
+        <form method="post">
+          {% csrf_token %}
+          {{ weather_form.as_p }}
+          <input type="submit" name="submit_weather" value="Save Weather" class="btn btn-brown mt-2" />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
